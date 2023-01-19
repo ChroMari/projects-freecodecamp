@@ -1,0 +1,9 @@
+mixin radio({descriptoin, title, name, radioValues } = {})
+  .radio(class = descriptoin ? descriptoin : "")
+    p.radio__title #{title}
+
+    each value, ind in radioValues
+      label.radio__text
+        input.radio__input(type="radio", name=name, value=value[0], checked = (ind === 0))  
+        span.radio__check-out
+        | #{value[1]}

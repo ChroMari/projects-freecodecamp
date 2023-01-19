@@ -1,0 +1,14 @@
+mixin input-value({descriptoin, optionTitle, forId, id, text, type, min, max, placeholder, selectValues } = {})
+  .input-value(class = descriptoin ? descriptoin : "")
+    label.input-value__title(id=id ? id : "", for=forId) #{text}
+    if type === 'text' || type === 'email'
+      input.input-value__input(id=forId, name=forId, type=type, placeholder=placeholder, required=true)
+    else if type === 'number'
+      input.input-value__input(id=forId, name=forId, type=type, min=min, max=max placeholder=placeholder, required=true)
+    else if type === 'select'
+      select.input-value__input(id=forId, name=forId, required=true)
+        option(disabled="", selected="", value="") #{optionTitle}
+        each value in selectValues
+          option(value=value[0]) #{value[1]}
+
+

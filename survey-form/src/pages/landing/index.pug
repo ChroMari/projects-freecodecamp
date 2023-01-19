@@ -1,0 +1,41 @@
+include ../../components/header/header.pug
+include ../../components/input-value/input-value.pug
+include ../../components/radio/radio.pug
+//- include ../../components/advantages/advantages.pug
+//- include ../../components/news/news.pug
+//- include ../../components/photo/photo.pug
+//- include ../../components/contacts/contacts.pug
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="css/style.min.css")
+    title Survey Form
+  body.body
+    +header
+    main
+      div.container
+        form(class="form", action="", id="survey-form")
+          +input-value({descriptoin: 'form__group', forId: 'name', id: 'name-label', text: 'Name', type: 'text', placeholder: 'Enter your name'})
+
+          +input-value({descriptoin: 'form__group', forId: 'email', id: 'email-label', text: 'Email', type: 'email', placeholder: 'Enter your Email'})
+
+          +input-value({descriptoin: 'form__group', forId: 'number', id: 'number-label', text: 'Age', type: 'number', min: '10', max: '99', placeholder: 'Age'})
+
+          +input-value({descriptoin: 'form__group', text: 'Which option best describes your current role?', optionTitle: 'Select current role', forId: 'dropdown', type: 'select', selectValues: [['student', 'Student'], ['job', 'Full Time Job'], ['learner', 'Full Time Learner'], ['preferNo', 'Prefer not to say'], ['other', 'Other']] })
+
+          +radio({descriptoin: 'form__group', title: 'Would you recommend freeCodeCamp to a friend?', name: 'user-recommend', radioValues: [['definitely', 'Definitely'], ['maybe', 'Maybe'], ['user-recommend', 'Not sure']]})
+
+
+      //- +advantages
+      //- .container
+      //-   .section-area
+      //-     +news
+      //-     +photo
+      //-   .section-area
+      //-     +contacts
+      
+    //- script(src='js/app.min.js')
