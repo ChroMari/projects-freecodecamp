@@ -8,24 +8,25 @@
 
 .radio__text
   position: relative
+  display: inline-block
   cursor: pointer
+  margin-bottom: 20px
   &:not(:last-child)
     margin-right: 20px
 
 .radio__input
   margin-right: 15px
   opacity: 0
-  &:checked
-    & + .radio__check-out::after
-      content: ''
-      position: absolute
-      width: 12px
-      height: 12px
-      border-radius: 50%
-      top: 50%
-      left: 50%
-      transform: translate(-50%, -50%)
-      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+  &:checked + .radio__check-out::after
+    content: ''
+    position: absolute
+    width: 12px
+    height: 12px
+    border-radius: 50%
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
 
 .radio__check-out
   position: absolute

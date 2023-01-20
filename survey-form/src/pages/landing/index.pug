@@ -1,10 +1,9 @@
 include ../../components/header/header.pug
 include ../../components/input-value/input-value.pug
 include ../../components/radio/radio.pug
-//- include ../../components/advantages/advantages.pug
-//- include ../../components/news/news.pug
-//- include ../../components/photo/photo.pug
-//- include ../../components/contacts/contacts.pug
+include ../../components/checkbox/checkbox.pug
+include ../../components/textarea/textarea.pug
+include ../../components/button/button.pug
 
 doctype html
 html(lang="en")
@@ -29,13 +28,10 @@ html(lang="en")
 
           +radio({descriptoin: 'form__group', title: 'Would you recommend freeCodeCamp to a friend?', name: 'user-recommend', radioValues: [['definitely', 'Definitely'], ['maybe', 'Maybe'], ['user-recommend', 'Not sure']]})
 
+          +input-value({descriptoin: 'form__group', text: 'What is your favorite feature of freeCodeCamp?', optionTitle: 'Select an option', forId: 'mostLike', type: 'select', selectValues: [['challenges', 'Challenges'], ['projects', 'Projects'], ['community', 'Community'], ['openSource', 'Open Source']] })
 
-      //- +advantages
-      //- .container
-      //-   .section-area
-      //-     +news
-      //-     +photo
-      //-   .section-area
-      //-     +contacts
-      
-    //- script(src='js/app.min.js')
+          +checkbox({descriptoin: 'form__group', title: 'What would you like to see improved?', clueText: '(Check all that apply)', name: 'prefer', checkboxValues: [['front-end-projects', 'Front-end Projects'], ['back-end-projects', 'Back-end Projects'], ['data-visualization', 'Data Visualization'], ['challenges', 'Challenges'], ['open-source-community', 'Open Source Community'], ['gitter-help-rooms', 'Gitter help rooms'], ['videos', 'Videos'], ['city-meetups', 'City Meetups'], ['wiki', 'Wiki'], ['forum', 'Forum'], ['additional-courses', 'Additional Courses']] })
+        
+          +textarea({descriptoin: 'form__group', title: 'Any comments or suggestions?', id: 'comments', name: 'comment', placeholder: 'Enter your comment here...'})
+
+          +button({title: 'Submit', type: 'submit'})

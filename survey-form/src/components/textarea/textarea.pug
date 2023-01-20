@@ -1,0 +1,4 @@
+mixin textarea({descriptoin, title, id, name, placeholder} = {})
+  .textarea(class = descriptoin ? descriptoin : "")
+    p.textarea__title #{title}
+    textarea.textarea__text(id=id, name=name, rows="8", placeholder=placeholder) 

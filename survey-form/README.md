@@ -1,2 +1,1 @@
-# barbershop
-Учебная вёрстка макета "Barbershop". Самостоятельная работа.
+# Survey Form

@@ -1,0 +1,11 @@
+mixin checkbox({descriptoin, title, clueText, name, checkboxValues } = {})
+  .checkbox(class = descriptoin ? descriptoin : "")
+    p.checkbox__title #{title}
+      if clueText 
+        span.checkbox__title_clue #{clueText}
+    
+    each value in checkboxValues
+      label.checkbox__text
+        input.checkbox__input(type='checkbox', name=name, value=value[0])
+        span.checkbox__check-out
+        | #{value[1]}
