@@ -1,0 +1,10 @@
+-
+  const menuItems = [['#Introduction', 'Introduction'], ['#What_you_should_already_know', 'What you should already know'], ['#JavaScript_and_Java', 'JavaScript and Java'], ['#Hello_world', 'Hello world'], ['#Variables', 'Variables'], ['#Declaring_variables', 'Declaring variables'], ['#Variable_scope', 'Variable scope'], ['#Global_variables', 'Global variables'], ['#Constants', 'Constants'], ['#Data_types', 'Data types'], ['#if...else_statement', 'if...else statement'], ['#while_statement', 'while statement'], ['#Function_declarations', 'Function declarations'], ['#Reference', 'Reference']]
+
+mixin menu()
+  nav(id="navbar", class="navbar")
+    header.navbar__title JS Documentation
+    ul.navbar__menu
+      for item in menuItems 
+        li
+          a(class="nav-link navbar__link", href=`${item[0]}`) #{item[1]}

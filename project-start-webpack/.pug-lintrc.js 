@@ -1,0 +1,4 @@
+module.exports = {
+  validateExtensions: null,
+  emitError: true
+}
